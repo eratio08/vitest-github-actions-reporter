@@ -4,7 +4,7 @@ import { summary } from '@actions/core'
 
 vi.mock('@actions/core', () => {
   return {
-    summary: { addTable: vi.fn(), addHeading: vi.fn() },
+    summary: { addTable: vi.fn(), addHeading: vi.fn(), write: vi.fn() },
     notice: vi.fn(),
   }
 })
@@ -93,6 +93,7 @@ describe('VitestGithubReporter', () => {
         { data: '20ms' },
       ],
     ])
+    expect(summary.write).toBeCalled()
     expect(summary.addTable).toBeCalledTimes(1)
   })
 })

@@ -19,6 +19,7 @@ class GithubActionsReporter implements Reporter {
       })
       .map(summaryTable.addFile)
     summary.addTable(summaryTable.getRows())
+    summary.write()
 
     return Promise.resolve()
   }
