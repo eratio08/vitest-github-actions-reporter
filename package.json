@@ -1,7 +1,9 @@
 {
-  "name": "vitest-github-actions-reporter",
+  "name": "vitest-github-actions-summary-reporter",
   "version": "0.1.0",
-  "description": "Vitest reporter that will append test results & coverage to the GITHUB_STEP_SUMMARY file.",
+  "description": "Vitest reporter that will append test results to the GITHUB_STEP_SUMMARY file.",
+  "license": "MIT",
+  "author": "Eike Lurz<eike.lurz@tuta.io>",
   "repository": {
     "type": "git",
     "url": "https://github.com/eratio08/vitest-github-actions-reporter"
@@ -21,6 +23,9 @@
     "clean": "rimraf lib",
     "build": "npm run clean && tsc -p tsconfig.lib.json"
   },
+  "dependencies": {
+    "@actions/core": "^1.8.2"
+  },
   "devDependencies": {
     "@types/node": "^17.0.41",
     "c8": "^7.11.3",
@@ -34,7 +39,5 @@
   "peerDependencies": {
     "typescript": "^3.0.0 || ^4.0.0",
     "vitest": "^0.14.1"
-  },
-  "author": "Eike Lurz<eike.lurz@tuta.io>",
-  "license": "MIT"
+  }
 }
