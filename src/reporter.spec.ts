@@ -5,6 +5,7 @@ import { summary } from '@actions/core'
 vi.mock('@actions/core', () => {
   return {
     summary: { addTable: vi.fn(), addHeading: vi.fn() },
+    notice: vi.fn(),
   }
 })
 
