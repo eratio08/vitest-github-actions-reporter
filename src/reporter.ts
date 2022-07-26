@@ -1,5 +1,5 @@
 import type { Awaitable, File, Reporter } from 'vitest'
-import { summary, notice } from '@actions/core'
+import { summary } from '@actions/core'
 import { buildSummaryTable } from './summary-table'
 
 class GithubActionsReporter implements Reporter {

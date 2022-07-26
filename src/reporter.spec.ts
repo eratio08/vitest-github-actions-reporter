@@ -1,6 +1,7 @@
 import { afterAll, describe, expect, File, it, Suite, Test, vi } from 'vitest'
 import { GithubActionsReporter } from './reporter'
 import { summary } from '@actions/core'
+import { context } from '@actions/github'
 
 vi.mock('@actions/core', () => {
   return {

@@ -1,6 +1,7 @@
 import { SummaryTableCell, SummaryTableRow } from '@actions/core/lib/summary'
 import { UnreachableCaseError } from 'ts-essentials'
 import { File, RunMode, Suite, Task, TaskState, Test } from 'vitest'
+import { context } from '@actions/github'
 
 const asCode = (str: string) => `<code>${str}</code>`
 
