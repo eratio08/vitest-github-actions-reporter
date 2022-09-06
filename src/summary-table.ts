@@ -60,18 +60,21 @@ const buildSummaryTable = (headers: string[]) => {
   const addFile = (file: File) => {
     const rec =
       (rows: SummaryTableRow[]) =>
-      (task: Task): SummaryTableRow[] => {
-        switch (task.type) {
-          case 'suite': {
-            return task.tasks.flatMap(rec(rows))
+        (task: Task): SummaryTableRow[] => {
+          switch (task.type) {
+            case 'suite': {
+              return task.tasks.flatMap(rec(rows))
+            }
+            case 'test': {
+              return [...rows, testToRow(task)]
+            }
+            case 'benchmark': {
+              return rows
+            }
+            default:
+              throw new UnreachableCaseError(task)
           }
-          case 'test': {
-            return [...rows, testToRow(task)]
-          }
-          default:
-            throw new UnreachableCaseError(task)
         }
-      }
 
     rec([])(file).forEach((row) => rows.push(row))
   }
