@@ -5,7 +5,7 @@ Vitest reporter that will append test results to the [GITHUB_STEP_SUMMARY](https
 ## 💿 Installation
 
 ```shell
-pnpm i -D vitest-github-actions-summary-reporter
+pnpm i -D vitest-github-actions-summary-reporter ts-essentials
 ```
 
 ## 🔧 Configuration
